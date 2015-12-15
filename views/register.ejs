@@ -1,9 +1,9 @@
 <% include head %>
 <body>
-	<div id="login-header">
-		<img src="images/dc_roasters_200x124_lt.png">
-		<div id="login-text">Register</div>
-		<a href="/login"><input class="btn btn-primary" type="submit" value="Login"></a>
+	<div id="register-header">
+		<a href="/"><img src="images/dc_roasters_200x124_lt.png"></a>
+		<a id="login-button" href="/login"><input class="btn btn-success" type="submit" value="Login"></a>
+		<div id="register-button">Register</div>
 	</div>
 	<div class="container">
 		<form id="register-form" role="form" action = "/register" method = "post">
@@ -15,7 +15,7 @@
 			<br/>
 			<input class="form-control" type= "text" name="email" placeholder = "Email Address">
 			<br/>
-			<input class="form-control" type="text" name = "userName" placeholder = 'User Name'>
+			<input class="form-control" type="text" name = "username" placeholder = 'User Name'>
 			<br/>
 			<input class = "form-control" type="password" name="password" placeholder = "Password">
 			<br/>
@@ -28,7 +28,7 @@
 	<div id="login-footer">
 		<div>
 			<div id="logo-container">
-				<img src="images/dc_roasters_200x124_lt.png">
+				<a href="/"><img src="images/dc_roasters_200x124_lt.png"></a>
 			</div>
 		</div>
 		<a href="#">Blog</a>
@@ -37,6 +37,6 @@
 	</div>
  
 </body>
-
+</html>
 
 
