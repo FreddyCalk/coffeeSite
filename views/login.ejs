@@ -1,0 +1,36 @@
+<% include head %>
+<body>
+	<div id="login-header">
+		<img src="images/dc_roasters_200x124_lt.png">
+		<div id="login-text">login</div>
+		<a href="/register"><input class="btn btn-primary" type="submit" value="Subscribe"></a>
+	</div>
+
+	<div class="container">
+		<h1> Login page</h1>
+		<p class = "lead"> Please enter your username and password below. </p>
+		<br/>
+		<form id ="login-form" role="form" action="/login" method="post">
+			<div class = "form-group">
+				<input class="form-control text" placeholder="Username" name="username" type="text">
+				<input class="form-control text" placeholder="Password" name="password" type="password">
+				<input class="btn btn-success" type="submit" value="Sign In!">
+				<a href="/"><input class = "btn btn-danger" type="button" value="Cancel"></a> 
+			</div>
+		</form>
+	</div>
+
+	<div id="login-footer">
+		<div>
+			<div id="logo-container">
+				<img src="images/dc_roasters_200x124_lt.png">
+			</div>
+		</div>
+		<a href="#">Blog</a>
+		<a href="#">Contact</a>
+		<a href="#">Suppliers</a>
+	</div>
+<body>
+
+
+

@@ -1,0 +1,133 @@
+/* line 6, ../../compass/sass/views/_home.scss */
+body #login-button {
+  position: absolute;
+  right: 110px;
+}
+/* line 10, ../../compass/sass/views/_home.scss */
+body #home-header {
+  position: fixed;
+  margin-top: -100px;
+  height: 100px;
+  width: 100vw;
+  background-color: #3a2f27;
+}
+/* line 16, ../../compass/sass/views/_home.scss */
+body #home-header img {
+  height: 80%;
+  margin: 0.5% 0px 0px 50px;
+}
+/* line 20, ../../compass/sass/views/_home.scss */
+body #home-header #login-text {
+  color: #edebe6;
+  position: absolute;
+  font-size: 15px;
+  top: 35px;
+  right: 160px;
+}
+/* line 27, ../../compass/sass/views/_home.scss */
+body #home-header a {
+  position: absolute;
+  top: 28px;
+  right: 50px;
+  font-size: 18px;
+}
+/* line 34, ../../compass/sass/views/_home.scss */
+body #home-div-1 {
+  margin: 100px 0px 0px 0px;
+  height: 600px;
+  width: 100vw;
+  color: #edebe6;
+  background: url("../../../images/CupInBeans.jpg") no-repeat scroll left;
+}
+/* line 40, ../../compass/sass/views/_home.scss */
+body #home-div-1 #div-1-header {
+  margin: 150px 0px 0px 150px;
+  font-size: 48px;
+}
+/* line 44, ../../compass/sass/views/_home.scss */
+body #home-div-1 .div-1-body {
+  width: 500px;
+  margin: 0px 150px;
+  font-size: 28px;
+}
+
+/* line 1, ../../compass/sass/views/_login.scss */
+body {
+  background-color: #edebe6;
+}
+/* line 3, ../../compass/sass/views/_login.scss */
+body #login-header {
+  position: fixed;
+  margin-top: -100px;
+  height: 100px;
+  width: 100vw;
+  background-color: #3a2f27;
+}
+/* line 9, ../../compass/sass/views/_login.scss */
+body #login-header img {
+  height: 80%;
+  margin: 0.5% 0px 0px 50px;
+}
+/* line 13, ../../compass/sass/views/_login.scss */
+body #login-header #login-text {
+  color: #edebe6;
+  position: absolute;
+  font-size: 15px;
+  top: 35px;
+  right: 160px;
+}
+/* line 20, ../../compass/sass/views/_login.scss */
+body #login-header a {
+  position: absolute;
+  top: 28px;
+  right: 50px;
+  font-size: 18px;
+}
+/* line 27, ../../compass/sass/views/_login.scss */
+body .container {
+  margin: 100px auto;
+}
+/* line 29, ../../compass/sass/views/_login.scss */
+body .container .text {
+  margin: 15px 0px;
+  width: 450px;
+  height: 45px;
+  font-size: 18px;
+}
+/* line 36, ../../compass/sass/views/_login.scss */
+body #login-footer {
+  height: 400px;
+  width: 100vw;
+  background-color: #3a2f27;
+  text-align: center;
+}
+/* line 41, ../../compass/sass/views/_login.scss */
+body #login-footer #logo-container {
+  width: 200px;
+  margin: auto;
+}
+/* line 45, ../../compass/sass/views/_login.scss */
+body #login-footer img {
+  margin: 100px auto 30px;
+}
+/* line 48, ../../compass/sass/views/_login.scss */
+body #login-footer a {
+  margin: 0px 10px;
+  color: #edebe6;
+}
+/* line 52, ../../compass/sass/views/_login.scss */
+body #login-footer a:hover {
+  text-decoration: none;
+  color: #a08855;
+}
+
+/* line 3, ../../compass/sass/views/_register.scss */
+body .container #register-form {
+  width: 600px;
+  margin: 100px auto;
+}
+/* line 7, ../../compass/sass/views/_register.scss */
+body .container input {
+  margin: 5px 0px;
+  height: 45px;
+}
