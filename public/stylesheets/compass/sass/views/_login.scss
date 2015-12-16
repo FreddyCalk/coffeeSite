@@ -2,6 +2,7 @@ body{
 	background-color: $cream;
 	#login-header{
 		position:fixed;
+		z-index: 100;
 		margin-top: -250px;
 		height:100px;
 		width:100vw;
@@ -26,6 +27,9 @@ body{
 	}
 	.container{
 		margin: 250px auto;
+		.login-error{
+			color: $red;
+		}
 		.text{
 			margin: 15px 0px;
 			width:450px;

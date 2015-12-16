@@ -28,6 +28,10 @@ body{
 			width:600px;
 			margin:20px auto; 
 		}
+		.error-message{
+			color: $red;
+			font-size:18px;
+		}
 		input{
 			margin:5px 0px;
 			height:45px;

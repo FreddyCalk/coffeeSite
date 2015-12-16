@@ -9,6 +9,15 @@
 		<form id="register-form" role="form" action = "/register" method = "post">
 			<h1> Register Now!</h1>
 			<p class="lead">Fill out the fields below to register.</p>
+<%
+	if(err){
+%>
+			<p class="error-message">That Username is already taken</p>
+<%
+	}
+%>
+
+
 			<input class="form-control" type="text" name="firstName" placeholder = "First Name">
 			<br/>
 			<input class="form-control" type= "text" name="lastName" placeholder = "Last Name">
