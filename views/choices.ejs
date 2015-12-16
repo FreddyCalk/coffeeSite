@@ -1,0 +1,186 @@
+<% include head %>
+
+<body>
+	<div id="choices-header">
+		<a href="/"><img id="logo" src="images/dc_roasters_200x124_lt.png"></a>
+		<div id="login-text">Welcome, <a href="#"><%=username%></a>... Not You?</div>
+		<a href="/logout"><input id="register-button" class="btn btn-danger" type="submit" value="Logout"></a>
+	</div>
+	<div id="choices-container" class="container">
+		<div id="plan-wrapper">
+			<div id="choices-main-header">Tell us what you want!!</div>
+			<div id="choices-sub-header">Shipping is free and you can skip any week</div>
+			<form name="choices-form" action="/choices" method="post">
+				<div id="choice-frequency" class="choice-block">
+					<div class="row">
+						<div class="choice-image col-sm-6">
+							<img src="images/calendar.png">
+						</div>
+						<div class="choice-text col-sm-6">
+							<h2 class="choices-label">1. Frequency</h2>
+							<div class="choices-lower-text-wrapper">
+								<div class="choices-lower-text">How often would you like us to send you your coffee?</div>
+								<select id="frequency" name = "frequency" class="form-control">
+							<% if(currFrequency == "weekly"){
+							%>
+									<option selected value="weekly">Weekly</option>
+									<option value="biweekly">Every Two Weeks</option>
+									<option value="monthly">Monthly</option>
+									<option value="quarterly">Quarterly</option>
+									<option value="semi-annually">Semi-Annually</option>
+									<option value="annually">Annually</option>
+							<%
+								}else if(currFrequency == 'biweekly'){
+							%>
+									<option value="weekly">Weekly</option>
+									<option selected value="biweekly">Every Two Weeks</option>
+									<option value="monthly">Monthly</option>
+									<option value="quarterly">Quarterly</option>
+									<option value="semi-annually">Semi-Annually</option>
+									<option value="annually">Annually</option>
+							<%
+								}else if(currFrequency == 'monthly'){
+							%>
+									<option value="weekly">Weekly</option>
+									<option value="biweekly">Every Two Weeks</option>
+									<option selected value="monthly">Monthly</option>
+									<option value="quarterly">Quarterly</option>
+									<option value="semi-annually">Semi-Annually</option>
+									<option value="annually">Annually</option>
+							<%
+								}else if(currFrequency == 'quarterly'){
+							%>
+									<option value="weekly">Weekly</option>
+									<option value="biweekly">Every Two Weeks</option>
+									<option value="monthly">Monthly</option>
+									<option selected value="quarterly">Quarterly</option>
+									<option value="semi-annually">Semi-Annually</option>
+									<option value="annually">Annually</option>
+							<%
+								}else if(currFrequency == 'semi-annually'){
+							%>
+									<option value="weekly">Weekly</option>
+									<option value="biweekly">Every Two Weeks</option>
+									<option value="monthly">Monthly</option>
+									<option value="quarterly">Quarterly</option>
+									<option selected value="semi-annually">Semi-Annually</option>
+									<option value="annually">Annually</option>
+							<%
+								}else if(currFrequency == 'annually'){
+							%>
+									<option value="weekly">Weekly</option>
+									<option value="biweekly">Every Two Weeks</option>
+									<option value="monthly">Monthly</option>
+									<option value="quarterly">Quarterly</option>
+									<option value="semi-annually">Semi-Annually</option>
+									<option selected value="annually">Annually</option>
+							<%
+								}else{
+							%>
+									<option value="weekly">Weekly</option>
+									<option value="biweekly">Every Two Weeks</option>
+									<option value="monthly">Monthly</option>
+									<option value="quarterly">Quarterly</option>
+									<option value="semi-annually">Semi-Annually</option>
+									<option value="annually">Annually</option>
+							<%
+								}
+							%>
+								</select>
+								<div class="choices-help-text">You can cancel anytime. You can skip anytime.</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="choice-quantity" class="choice-block">
+					<div class="row">
+						<div class="choice-image col-sm-6">
+							<img src="images/food-scale.png">
+						</div>
+						<div class="choice-text col-sm-6">
+							<h2 class="choices-label">2. Amount</h2>
+							<div class="choices-lower-text-wrapper">
+								<div class="choices-lower-text">How many packages would you like each delivery (each package is 0.25 pounds)?</div>
+								<input class="form-control" type="text" placeholder="20" name="unitQuantity"placeholder="Enter number of Packages" value="<%=unitQuantity%>">
+								<div class="choices-help-text"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="choice-grind" class="choice-block">
+					<div class="row">
+						<div class="choice-image col-sm-6">
+							<img src="images/beans.png">
+						</div>
+						<div class="choice-text col-sm-6">
+							<h2 class="choices-label">3. Grind Type</h2>
+							<div class="choices-lower-text-wrapper">
+								<div class="choices-lower-text">How do you like your grinds?</div>
+								<select id="grind" name = "grind" class="form-control">
+								<% 
+									if(currGrind == 'extraCoarse' ){
+								%>
+											<option selected value="extraCoarse">Extra Coarse</option>
+											<option value="coarse">Coarse</option>
+											<option value="mediumCoarse">Medium Coarse</option>
+											<option value="fine">Fine</option>
+											<option value="veryFine">Very Fine</option>
+								<%
+									}else if(currGrind == 'coarse'){
+								%>
+											<option value="extraCoarse">Extra Coarse</option>
+											<option selected value="coarse">Coarse</option>
+											<option value="mediumCoarse">Medium Coarse</option>
+											<option value="fine">Fine</option>
+											<option value="veryFine">Very Fine</option>
+								<%
+									}else if(currGrind == 'mediumCoarse'){
+								%>
+											<option value="extraCoarse">Extra Coarse</option>
+											<option value="coarse">Coarse</option>
+											<option selected value="mediumCoarse">Medium Coarse</option>
+											<option value="fine">Fine</option>
+											<option value="veryFine">Very Fine</option>
+								<%
+									}else if(currGrind == 'fine'){
+								%>
+											<option value="extraCoarse">Extra Coarse</option>
+											<option value="coarse">Coarse</option>
+											<option value="mediumCoarse">Medium Coarse</option>
+											<option selected value="fine">Fine</option>
+											<option value="veryFine">Very Fine</option>
+								<%
+									}else if(currGrind == 'veryFine'){
+								%>
+											<option value="extraCoarse">Extra Coarse</option>
+											<option value="coarse">Coarse</option>
+											<option value="mediumCoarse">Medium Coarse</option>
+											<option value="fine">Fine</option>
+											<option selected value="veryFine">Very Fine</option>
+								<%
+									}else{
+								%>
+											<option value="extraCoarse">Extra Coarse</option>
+											<option value="coarse">Coarse</option>
+											<option value="mediumCoarse">Medium Coarse</option>
+											<option value="fine">Fine</option>
+											<option value="veryFine">Very Fine</option>
+								<%
+									}
+								%>
+									
+								</select>
+								<div class="choices-help-text"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="save-wrapper">
+					<input id="save-button" type="submit" class="btn btn-primary btn-lg" value="Save Preferences">
+				</div>
+			</form>
+		</div>
+
+	</div>
+</div>
+</body>

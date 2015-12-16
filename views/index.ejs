@@ -24,24 +24,29 @@
 		<div id="div-1-header">A better way to grind</div>
 
 		<div id="div-1-body">Freshly roasted coffee beans<br/> delivered weekly to your door</div>
+
+		<div id="login-or-register">
+			<div id="header-login-div">Craft Coffee. <br/> Good Coffee.</div>
 <%  
 	if(!username){
 %>
-		<div id="login-or-register">
-			<div id="header-login-div">Craft Coffee. <br/> Good Coffee.</div>
 			<form  role="form" action="/login" method="post">
 				<input type="text" class="form-control" name="username" placeholder="Username">
 				<input type="password" class="form-control" name="password" placeholder="Password">
-				<input class="login-button2" type="submit" class="btn" value="Login">
-			
-			
+				<input class="login-button2" type="submit" class="btn" value="Login">		
 				<div id="or">Or</div>
 				<a href="/register"><input class="login-button2" type="button" class="btn" value="Get Started"></a>
-			</form>
-		</div>
+<%
+	}else{
+%>
+				<br/><br/><br/><br/>
+				<a href="/choices"><input class="login-button2" type="button" class="btn" value="Set Preferences"></a>
 <%
 	}
-%>
+%>	
+			</form>
+		</div>
+
 	</div>
 	<div id="home-div-2">
 		<div id="div-2-header">We source coffee beans from around the <br/> World and roast them fresh daily</div>

@@ -8,7 +8,10 @@ var Account = new Schema({
 	lastName: String,
 	email: String,
 	username: String,
-	password: String
+	password: String,
+	grind: String,
+	unitQuantity: Number,
+	frequency: String
 })
 
 Account.plugin(passportLocalMongoose);
