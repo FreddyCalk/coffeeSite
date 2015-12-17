@@ -2,6 +2,8 @@ var express = require('express');
 var passport = require('passport');
 var Account = require('../models/accounts');
 var router = express.Router();
+var nodeMailer = require('nodemailer')
+var vars = require('../configs/vars.json');
 /* GET home page. */
 router.get('/', function (req, res, next) {
 	res.render('index', { username: req.session.username});
@@ -133,7 +135,18 @@ router.post('/choices', function (req, res, next){
 
 router.get('/delivery', function (req, res, next){
 	if(req.session.username){
-		res.render('delivery',{username: req.session.username})
+		Account.findOne({username : req.session.username},
+			function (err, doc){
+				var currName = doc.fullName ? doc.fullName : undefined;
+				var currAddress1 = doc.address1 ? doc.address1 : undefined;
+				var currAddress2 = doc.address2 ? doc.address2 : undefined;
+				var currCity = doc.city ? doc.city : undefined;
+				var currState = doc.state ? doc.state : undefined;
+				var currZip = doc.zip ? doc.zip : undefined;
+				res.render('delivery',{username: req.session.username, fullName : currName,
+			address1:currAddress1,address2:currAddress2,city:currCity,state:currState,zip:currZip})
+			})
+
 	}else{
 		res.redirect('/');
 	}
@@ -174,6 +187,20 @@ router.post('/delivery',function (req, res, next){
 	}else{
 		res.redirect('/')
 	}
+})
+
+router.get('/payment', function (req, res, next){
+	res.render('payment',{username: req.session.username})
+})
+
+router.get('/email', function (req, res, next){
+	var transporter = nodemailer.createTransport({
+		service: 'Gmail',
+		auth: {
+			user: vars.email,
+			pass: vars.password
+		}
+	})
 })
 
 module.exports = router;

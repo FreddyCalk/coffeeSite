@@ -65,5 +65,11 @@
 			<div class="div-3-body">lorem ipsum is simply</div>
 		</div>
 	</div>
-	<a href="/register"><input type="submit" class="btn btn-primary" value="Get Started"></a>
+<%
+	if(!username){
+%>
+		<a href="/register"><input type="submit" class="btn btn-primary" value="Get Started"></a>
+<%
+	}
+%>
 <% include foot %>
