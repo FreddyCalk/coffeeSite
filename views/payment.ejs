@@ -1,7 +1,53 @@
 <% include head %>
 
 <div class="container">
-	<h1>Payment</h1>
+	<div id="payment-container">
+		<h1>Payment</h1>
+		<div id="options-container">
+				<div class="row">
+					<div id="choices-confirm-header" class="col-xs-3">Choices <a href="/choices"><span>(Edit)</span></a></div>
+					
+				</div>
+				<div class="row">
+					<div id="choice-grind" class="col-xs-1 col-xs-offset-1 bold">Grind</div>
+					<div id="grind-val" class="col-xs-2 col-xs-offset-1"><%=grind%></div>
+				</div>
+				<div class="row">
+					<div id="choice-frequency" class="col-xs-2 col-xs-offset-1 bold">Frequency</div>
+					<div id="frequency-val" class="col-xs-2"><%=frequency%></div>
+				</div>
+				<div class="row">
+					<div id="choice-quantity" class="col-xs-2 col-xs-offset-1 bold">Quantity</div>
+					<div id="quantity-val" class="col-xs-2"><%=quantity%> Packages</div>
+				</div>
+				<div class="row">
+					<div id="delivery-info" class="col-xs-5">Delivery Information <a href="/delivery"><span>(Edit)</span></a></div>
+				</div>
+				<div class="row">
+					<div id="name-address" class="col-xs-2 col-xs-offset-1 bold">Recipient Name</div>
+					<div id="name-val" class="col-xs-2"><%=fullName%></div>
+				</div>
+				<div class="row">
+					<div id="address1" class="col-xs-2 col-xs-offset-1 bold">Address</div>
+					<div id="address-val" class="col-xs-3"><%=address1%> <br/> <%=address2%></div>
+				</div>
+				<div class="row">
+
+					<div id="city-val" class="col-xs-2 col-xs-offset-3"><%=city%>, <%=state%> <%=zip%></div>
+				</div>
+				<form id="pay-button" action="./payment" method="POST">
+				  <script
+				    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+				    data-key="pk_test_JAbJatMbX8Sr8MRx0DfnNle4"
+				    data-amount="2000"
+				    data-name="Demo Site"
+				    data-description="2 widgets ($20.00)"
+				    data-image="/128x128.png"
+				    data-locale="auto">
+				  </script>
+				</form>
+		</div>
+	</div>
 </div>
 
 <% include foot %>

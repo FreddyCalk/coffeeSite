@@ -1,6 +1,15 @@
 <% include head %>
 
-	</div>
+
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
+<script>
+ $(function() {
+   $( "#datepicker" ).datepicker({minDate: 1});
+ });
+</script>
 	<div class="container">
 		<div id="delivery-wrapper">
 			<h2>Address</h2>
@@ -69,7 +78,7 @@
 				<label>Zip Code</label>
 				<input type="text" id="zip" name="zip" class="form-control" value="<%=zip%>">
 				<label>Date of next Delivery (this will be your first delivery if you are just signing up</label>
-				<input type="text" id="date" name="date" class="form-control">
+				<input type="text" id="datepicker" name="date" class="form-control">
 				<input type="submit" class="btn btn-success" value="Place Order!">
 				<a href="/"><input type="button" class="btn btn-danger" value="Cancel"></a>
 			</form>

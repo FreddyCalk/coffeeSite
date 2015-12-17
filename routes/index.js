@@ -3,7 +3,8 @@ var passport = require('passport');
 var Account = require('../models/accounts');
 var router = express.Router();
 var nodeMailer = require('nodemailer')
-var vars = require('../configs/vars.json');
+var vars = require('../config/vars.json');
+var stripe = require('stripe')("sk_test_HI3dHwOVFKZBk3MKVeAOBATe");
 /* GET home page. */
 router.get('/', function (req, res, next) {
 	res.render('index', { username: req.session.username});
@@ -190,17 +191,56 @@ router.post('/delivery',function (req, res, next){
 })
 
 router.get('/payment', function (req, res, next){
-	res.render('payment',{username: req.session.username})
+	Account.findOne({username: req.session.username}, function (err, account){
+		console.log(account)
+		res.render('payment',{grind: account.grind, frequency: account.frequency, quantity: account.unitQuantity, username: req.session.username, address1: account.address1, address2: account.address2, fullName: account.fullName, city: account.city, state: account.state, zip: account.zip, date: account.date})
+	})
+	
+})
+
+router.post('/payment', function (req, res, next){
+	stripe.charges.create({
+		amount: 400,
+		currency: "usd",
+		source: req.body.stripeToken,
+		description: "Charge for " + req.body.stripeEmail
+	}, function (err, charge){
+		if(err){
+			res.send("You got an error: "+ err)
+		}else{
+			res.redirect('/thankyou')
+		}
+	})
 })
 
 router.get('/email', function (req, res, next){
-	var transporter = nodemailer.createTransport({
+	var transporter = nodeMailer.createTransport({
 		service: 'Gmail',
 		auth: {
 			user: vars.email,
-			pass: vars.password
+			pass: vars.pass
 		}
 	})
+	var text = "This is a test email sent from my node server";
+	var mailOptions = {
+		from: 'Freddy Calk <freddycalk@gmail.com>',
+		to: 'Freddy Calk <freddycalk@gmail.com>',
+		subject: 'This is a test email',
+		text: text 
+	}
+	transporter.sendMail(mailOptions, function (err, info){
+		if(err){
+			console.log(err);
+			res.json({response : err});
+		}else{
+			console.log("Message was successfully send. Response was "+ info.response);
+			res.json({response: "success"});
+		}
+	})
+})
+
+router.get('/contact', function (req, res, next){
+	res.render('contact',{grind: account.grind, frequency: account.frequency, quantity: account.unitQuantity, username: req.session.username, address1: address1, address2: address2, fullName: fullName, city: city, state: state, zip: zip, date: date})
 })
 
 module.exports = router;

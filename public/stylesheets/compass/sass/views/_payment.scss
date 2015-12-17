@@ -2,4 +2,37 @@
 // _PAYMENT.SCSS
 // Payment View Styles
 // -------------------------------
+#payment-container{
+	margin-top:70px;
 
+	#options-container{
+		border: 1px solid darken($cream,10%);
+		padding:30px;
+		margin-top: 40px;
+		.bold{
+			font-weight:bold;
+		}
+		#choices-confirm-header{
+			font-size: 28px;
+			margin:20px;
+			span{
+				font-size: 12px;
+				color:blue;
+			}
+		}
+		#delivery-info{
+			font-size: 28px;
+			margin:20px;
+			span{
+				font-size: 12px;
+				color:blue;
+			}
+		}
+		.btn{
+			margin:50px 20px 10px;
+		}
+		#pay-button{
+			margin: 50px 0px 30px 20px; 
+		}
+	}
+}
