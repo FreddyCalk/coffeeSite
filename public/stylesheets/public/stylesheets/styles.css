@@ -1,3 +1,72 @@
+/* line 6, ../../compass/sass/layout/_header.scss */
+#header {
+  position: fixed;
+  margin-top: -100px;
+  z-index: 100;
+  height: 100px;
+  width: 100vw;
+  background-color: #3a2f27;
+}
+/* line 13, ../../compass/sass/layout/_header.scss */
+#header img {
+  height: 80%;
+  margin: 0.5% 0px 0px 50px;
+}
+/* line 17, ../../compass/sass/layout/_header.scss */
+#header #login-button {
+  color: #edebe6;
+  position: absolute;
+  font-size: 15px;
+  top: 28px;
+  right: 160px;
+}
+/* line 24, ../../compass/sass/layout/_header.scss */
+#header #login-text {
+  color: #edebe6;
+  position: absolute;
+  font-size: 15px;
+  top: 35px;
+  right: 160px;
+}
+/* line 30, ../../compass/sass/layout/_header.scss */
+#header #login-text a {
+  display: inline;
+}
+/* line 34, ../../compass/sass/layout/_header.scss */
+#header #register-button {
+  position: absolute;
+  top: 28px;
+  right: 50px;
+  font-size: 15px;
+}
+
+/* line 5, ../../compass/sass/layout/_footer.scss */
+#footer {
+  height: 400px;
+  width: 100vw;
+  background-color: #3a2f27;
+  text-align: center;
+}
+/* line 10, ../../compass/sass/layout/_footer.scss */
+#footer #logo-container {
+  width: 200px;
+  margin: auto;
+}
+/* line 14, ../../compass/sass/layout/_footer.scss */
+#footer img {
+  margin: 100px auto 30px;
+}
+/* line 17, ../../compass/sass/layout/_footer.scss */
+#footer a {
+  margin: 0px 10px;
+  color: #edebe6;
+}
+/* line 21, ../../compass/sass/layout/_footer.scss */
+#footer a:hover {
+  text-decoration: none;
+  color: #a08855;
+}
+
 /* line 5, ../../compass/sass/views/_home.scss */
 body {
   background-color: #edebe6;
@@ -8,47 +77,6 @@ body #login-button {
   right: 110px;
 }
 /* line 11, ../../compass/sass/views/_home.scss */
-body #home-header {
-  position: fixed;
-  margin-top: -100px;
-  z-index: 100;
-  height: 100px;
-  width: 100vw;
-  background-color: #3a2f27;
-}
-/* line 18, ../../compass/sass/views/_home.scss */
-body #home-header img {
-  height: 80%;
-  margin: 0.5% 0px 0px 50px;
-}
-/* line 22, ../../compass/sass/views/_home.scss */
-body #home-header #login-button {
-  color: #edebe6;
-  position: absolute;
-  font-size: 15px;
-  top: 28px;
-  right: 160px;
-}
-/* line 29, ../../compass/sass/views/_home.scss */
-body #home-header #login-text {
-  color: #edebe6;
-  position: absolute;
-  font-size: 15px;
-  top: 35px;
-  right: 160px;
-}
-/* line 35, ../../compass/sass/views/_home.scss */
-body #home-header #login-text a {
-  display: inline;
-}
-/* line 39, ../../compass/sass/views/_home.scss */
-body #home-header #register-button {
-  position: absolute;
-  top: 28px;
-  right: 50px;
-  font-size: 15px;
-}
-/* line 46, ../../compass/sass/views/_home.scss */
 body #home-div-1 {
   margin: 100px 0px 0px 0px;
   height: 600px;
@@ -56,19 +84,19 @@ body #home-div-1 {
   color: #edebe6;
   background: url("../../../images/CupInBeans.jpg") no-repeat scroll left;
 }
-/* line 52, ../../compass/sass/views/_home.scss */
+/* line 17, ../../compass/sass/views/_home.scss */
 body #home-div-1 #div-1-header {
   margin: 170px 0px 0px 8%;
   width: 700px;
   font-size: 64px;
 }
-/* line 57, ../../compass/sass/views/_home.scss */
+/* line 22, ../../compass/sass/views/_home.scss */
 body #home-div-1 #div-1-body {
   margin: 0px 8%;
   width: 700px;
   font-size: 36px;
 }
-/* line 62, ../../compass/sass/views/_home.scss */
+/* line 27, ../../compass/sass/views/_home.scss */
 body #home-div-1 #login-or-register {
   position: absolute;
   right: 200px;
@@ -82,23 +110,23 @@ body #home-div-1 #login-or-register {
   opacity: 0.8;
   text-align: center;
 }
-/* line 74, ../../compass/sass/views/_home.scss */
+/* line 39, ../../compass/sass/views/_home.scss */
 body #home-div-1 #login-or-register #header-login-div {
   font-size: 32px;
   color: #294741;
 }
-/* line 78, ../../compass/sass/views/_home.scss */
+/* line 43, ../../compass/sass/views/_home.scss */
 body #home-div-1 #login-or-register .form-control {
   background-color: #ffff99;
   font-size: 18px;
   margin-top: 15px;
 }
-/* line 83, ../../compass/sass/views/_home.scss */
+/* line 48, ../../compass/sass/views/_home.scss */
 body #home-div-1 #login-or-register #or {
   color: #294741;
   font-size: 18px;
 }
-/* line 87, ../../compass/sass/views/_home.scss */
+/* line 52, ../../compass/sass/views/_home.scss */
 body #home-div-1 #login-or-register .login-button2 {
   width: 200px;
   margin: 10px;
@@ -107,31 +135,31 @@ body #home-div-1 #login-or-register .login-button2 {
   font-size: 20px;
   border-radius: 10px;
 }
-/* line 95, ../../compass/sass/views/_home.scss */
+/* line 60, ../../compass/sass/views/_home.scss */
 body #home-div-1 #login-or-register .login-button2:hover {
   background-color: #135335;
 }
-/* line 100, ../../compass/sass/views/_home.scss */
+/* line 65, ../../compass/sass/views/_home.scss */
 body #home-div-2 {
   width: 1100px;
   background-color: white;
   margin: 50px auto;
   padding: 50px;
 }
-/* line 105, ../../compass/sass/views/_home.scss */
+/* line 70, ../../compass/sass/views/_home.scss */
 body #home-div-2 #div-2-header {
   font-size: 48px;
 }
-/* line 108, ../../compass/sass/views/_home.scss */
+/* line 73, ../../compass/sass/views/_home.scss */
 body #home-div-2 #div-2-body {
   font-size: 24px;
 }
-/* line 112, ../../compass/sass/views/_home.scss */
+/* line 77, ../../compass/sass/views/_home.scss */
 body #home-div-3 {
   width: 100vw;
   height: 800px;
 }
-/* line 115, ../../compass/sass/views/_home.scss */
+/* line 80, ../../compass/sass/views/_home.scss */
 body #home-div-3 #div-3-banner {
   height: 70px;
   background-color: #edebe6;
@@ -139,82 +167,40 @@ body #home-div-3 #div-3-banner {
   font-size: 38px;
   color: #294741;
 }
-/* line 121, ../../compass/sass/views/_home.scss */
+/* line 86, ../../compass/sass/views/_home.scss */
 body #home-div-3 #div-3-banner #how-it-works {
   margin-top: 70px;
 }
-/* line 125, ../../compass/sass/views/_home.scss */
+/* line 90, ../../compass/sass/views/_home.scss */
 body #home-div-3 #div-3-container {
   background-image: url("../../../images/CoffeeBags.jpg");
   height: 600px;
   color: #edebe6;
 }
-/* line 129, ../../compass/sass/views/_home.scss */
+/* line 94, ../../compass/sass/views/_home.scss */
 body #home-div-3 #div-3-container #div-3-header {
   padding: 150px 0px 0px 200px;
   font-size: 64px;
 }
-/* line 133, ../../compass/sass/views/_home.scss */
+/* line 98, ../../compass/sass/views/_home.scss */
 body #home-div-3 #div-3-container .div-3-body {
   margin: 10px;
   padding: 10px 0px 0px 270px;
   font-size: 24px;
 }
 
-/* line 1, ../../compass/sass/views/_choices.scss */
-#choices-header {
-  position: fixed;
-  top: 0px;
-  z-index: 100;
-  height: 100px;
-  width: 100vw;
-  background-color: #3a2f27;
-}
-/* line 8, ../../compass/sass/views/_choices.scss */
-#choices-header #logo {
-  height: 80%;
-  margin: 0.5% 0px 0px 50px;
-}
-/* line 12, ../../compass/sass/views/_choices.scss */
-#choices-header #login-button {
-  color: #edebe6;
-  position: absolute;
-  font-size: 15px;
-  top: 28px;
-  right: 160px;
-}
-/* line 19, ../../compass/sass/views/_choices.scss */
-#choices-header #login-text {
-  color: #edebe6;
-  position: absolute;
-  font-size: 15px;
-  top: 35px;
-  right: 160px;
-}
-/* line 25, ../../compass/sass/views/_choices.scss */
-#choices-header #login-text a {
-  display: inline;
-}
-/* line 29, ../../compass/sass/views/_choices.scss */
-#choices-header #register-button {
-  position: absolute;
-  top: 28px;
-  right: 50px;
-  font-size: 15px;
-}
-
-/* line 36, ../../compass/sass/views/_choices.scss */
+/* line 2, ../../compass/sass/views/_choices.scss */
 #plan-wrapper {
-  margin-top: -40px;
+  margin-top: 100px;
 }
-/* line 38, ../../compass/sass/views/_choices.scss */
+/* line 4, ../../compass/sass/views/_choices.scss */
 #plan-wrapper #choices-main-header {
   margin: 0 0 8px;
   font-size: 32px;
   line-height: 1.2;
   text-align: center;
 }
-/* line 44, ../../compass/sass/views/_choices.scss */
+/* line 10, ../../compass/sass/views/_choices.scss */
 #plan-wrapper #choices-sub-header {
   margin: 0;
   font-size: 20px;
@@ -222,15 +208,15 @@ body #home-div-3 #div-3-container .div-3-body {
   text-align: center;
   line-height: 1.4;
 }
-/* line 51, ../../compass/sass/views/_choices.scss */
+/* line 17, ../../compass/sass/views/_choices.scss */
 #plan-wrapper .choices-image {
   text-align: center;
 }
-/* line 53, ../../compass/sass/views/_choices.scss */
+/* line 19, ../../compass/sass/views/_choices.scss */
 #plan-wrapper .choices-image img {
   max-width: 100%;
 }
-/* line 57, ../../compass/sass/views/_choices.scss */
+/* line 23, ../../compass/sass/views/_choices.scss */
 #plan-wrapper .choice-block {
   border: 1px solid #d8d3c8;
   border-radius: 5px;
@@ -238,56 +224,19 @@ body #home-div-3 #div-3-container .div-3-body {
   padding: 30px;
 }
 
-/* line 64, ../../compass/sass/views/_choices.scss */
+/* line 30, ../../compass/sass/views/_choices.scss */
 #save-wrapper {
   text-align: center;
   margin: auto;
 }
-/* line 67, ../../compass/sass/views/_choices.scss */
+/* line 33, ../../compass/sass/views/_choices.scss */
 #save-wrapper #save-button {
   width: 600px;
 }
 
 /* line 5, ../../compass/sass/views/_delivery.scss */
-#delivery-header {
-  position: fixed;
-  margin-top: -250px;
-  z-index: 100;
-  height: 100px;
-  width: 100vw;
-  background-color: #3a2f27;
-}
-/* line 12, ../../compass/sass/views/_delivery.scss */
-#delivery-header img {
-  height: 80%;
-  margin: 0.5% 0px 0px 50px;
-}
-/* line 16, ../../compass/sass/views/_delivery.scss */
-#delivery-header #login-button {
-  color: #edebe6;
-  position: absolute;
-  font-size: 15px;
-  top: 28px;
-  right: 160px;
-}
-/* line 23, ../../compass/sass/views/_delivery.scss */
-#delivery-header #login-text {
-  color: #edebe6;
-  position: absolute;
-  font-size: 15px;
-  top: 35px;
-  right: 160px;
-}
-/* line 29, ../../compass/sass/views/_delivery.scss */
-#delivery-header #login-text a {
-  display: inline;
-}
-/* line 33, ../../compass/sass/views/_delivery.scss */
-#delivery-header #register-button {
-  position: absolute;
-  top: 28px;
-  right: 50px;
-  font-size: 15px;
+#delivery-wrapper {
+  margin-top: 100px;
 }
 
 /* line 1, ../../compass/sass/views/_login.scss */
@@ -295,174 +244,57 @@ body {
   background-color: #edebe6;
 }
 /* line 3, ../../compass/sass/views/_login.scss */
-body #login-header {
-  position: fixed;
-  z-index: 100;
-  margin-top: -250px;
-  height: 100px;
-  width: 100vw;
-  background-color: #3a2f27;
-}
-/* line 10, ../../compass/sass/views/_login.scss */
-body #login-header img {
-  height: 80%;
-  margin: 0.5% 0px 0px 50px;
-}
-/* line 14, ../../compass/sass/views/_login.scss */
-body #login-header #login-text {
-  color: #edebe6;
-  position: absolute;
-  font-size: 15px;
-  top: 35px;
-  right: 160px;
-}
-/* line 21, ../../compass/sass/views/_login.scss */
-body #login-header #register-button {
-  position: absolute;
-  top: 28px;
-  right: 50px;
-  font-size: 18px;
-}
-/* line 28, ../../compass/sass/views/_login.scss */
 body .container {
   margin: 250px auto;
 }
-/* line 30, ../../compass/sass/views/_login.scss */
-body .container .login-error {
+/* line 5, ../../compass/sass/views/_login.scss */
+body .container #login-wrapper {
+  margin: 60px;
+}
+/* line 7, ../../compass/sass/views/_login.scss */
+body .container #login-wrapper .login-error {
   color: #dc0707;
 }
-/* line 33, ../../compass/sass/views/_login.scss */
-body .container .text {
+/* line 10, ../../compass/sass/views/_login.scss */
+body .container #login-wrapper .text {
   margin: 15px 0px;
   width: 450px;
   height: 45px;
   font-size: 18px;
 }
-/* line 40, ../../compass/sass/views/_login.scss */
-body #login-footer {
-  height: 400px;
-  width: 100vw;
-  background-color: #3a2f27;
-  text-align: center;
-}
-/* line 45, ../../compass/sass/views/_login.scss */
-body #login-footer #logo-container {
-  width: 200px;
-  margin: auto;
-}
-/* line 49, ../../compass/sass/views/_login.scss */
-body #login-footer img {
-  margin: 100px auto 30px;
-}
-/* line 52, ../../compass/sass/views/_login.scss */
-body #login-footer a {
-  margin: 0px 10px;
-  color: #edebe6;
-}
-/* line 56, ../../compass/sass/views/_login.scss */
-body #login-footer a:hover {
-  text-decoration: none;
-  color: #a08855;
-}
 
 /* line 2, ../../compass/sass/views/_register.scss */
-body #register-header {
-  position: fixed;
-  margin-top: -250px;
-  height: 100px;
-  width: 100vw;
-  background-color: #3a2f27;
+body .container {
+  margin-top: 100px;
 }
-/* line 8, ../../compass/sass/views/_register.scss */
-body #register-header img {
-  height: 80%;
-  margin: 0.5% 0px 0px 50px;
-}
-/* line 12, ../../compass/sass/views/_register.scss */
-body #register-header #login-button {
-  position: absolute;
-  font-size: 18px;
-  top: 27px;
-  right: 150px;
-}
-/* line 18, ../../compass/sass/views/_register.scss */
-body #register-header #register-button {
-  position: absolute;
-  color: #edebe6;
-  top: 35px;
-  right: 60px;
-  font-size: 15px;
-}
-/* line 27, ../../compass/sass/views/_register.scss */
+/* line 4, ../../compass/sass/views/_register.scss */
 body .container #register-form {
   width: 600px;
-  margin: 20px auto;
+  margin: 50px auto;
 }
-/* line 31, ../../compass/sass/views/_register.scss */
+/* line 8, ../../compass/sass/views/_register.scss */
 body .container .error-message {
   color: #dc0707;
   font-size: 18px;
 }
-/* line 35, ../../compass/sass/views/_register.scss */
+/* line 12, ../../compass/sass/views/_register.scss */
 body .container input {
   margin: 5px 0px;
   height: 45px;
 }
 
-/* line 1, ../../compass/sass/views/_choices.scss */
-#choices-header {
-  position: fixed;
-  top: 0px;
-  z-index: 100;
-  height: 100px;
-  width: 100vw;
-  background-color: #3a2f27;
-}
-/* line 8, ../../compass/sass/views/_choices.scss */
-#choices-header #logo {
-  height: 80%;
-  margin: 0.5% 0px 0px 50px;
-}
-/* line 12, ../../compass/sass/views/_choices.scss */
-#choices-header #login-button {
-  color: #edebe6;
-  position: absolute;
-  font-size: 15px;
-  top: 28px;
-  right: 160px;
-}
-/* line 19, ../../compass/sass/views/_choices.scss */
-#choices-header #login-text {
-  color: #edebe6;
-  position: absolute;
-  font-size: 15px;
-  top: 35px;
-  right: 160px;
-}
-/* line 25, ../../compass/sass/views/_choices.scss */
-#choices-header #login-text a {
-  display: inline;
-}
-/* line 29, ../../compass/sass/views/_choices.scss */
-#choices-header #register-button {
-  position: absolute;
-  top: 28px;
-  right: 50px;
-  font-size: 15px;
-}
-
-/* line 36, ../../compass/sass/views/_choices.scss */
+/* line 2, ../../compass/sass/views/_choices.scss */
 #plan-wrapper {
-  margin-top: -40px;
+  margin-top: 100px;
 }
-/* line 38, ../../compass/sass/views/_choices.scss */
+/* line 4, ../../compass/sass/views/_choices.scss */
 #plan-wrapper #choices-main-header {
   margin: 0 0 8px;
   font-size: 32px;
   line-height: 1.2;
   text-align: center;
 }
-/* line 44, ../../compass/sass/views/_choices.scss */
+/* line 10, ../../compass/sass/views/_choices.scss */
 #plan-wrapper #choices-sub-header {
   margin: 0;
   font-size: 20px;
@@ -470,15 +302,15 @@ body .container input {
   text-align: center;
   line-height: 1.4;
 }
-/* line 51, ../../compass/sass/views/_choices.scss */
+/* line 17, ../../compass/sass/views/_choices.scss */
 #plan-wrapper .choices-image {
   text-align: center;
 }
-/* line 53, ../../compass/sass/views/_choices.scss */
+/* line 19, ../../compass/sass/views/_choices.scss */
 #plan-wrapper .choices-image img {
   max-width: 100%;
 }
-/* line 57, ../../compass/sass/views/_choices.scss */
+/* line 23, ../../compass/sass/views/_choices.scss */
 #plan-wrapper .choice-block {
   border: 1px solid #d8d3c8;
   border-radius: 5px;
@@ -486,12 +318,51 @@ body .container input {
   padding: 30px;
 }
 
-/* line 64, ../../compass/sass/views/_choices.scss */
+/* line 30, ../../compass/sass/views/_choices.scss */
 #save-wrapper {
   text-align: center;
   margin: auto;
 }
-/* line 67, ../../compass/sass/views/_choices.scss */
+/* line 33, ../../compass/sass/views/_choices.scss */
 #save-wrapper #save-button {
   width: 600px;
+}
+
+/* line 1, ../../compass/sass/views/_deliveryConfirm.scss */
+#delivery-confirm-wrapper {
+  margin-top: 100px;
+}
+/* line 3, ../../compass/sass/views/_deliveryConfirm.scss */
+#delivery-confirm-wrapper h1 {
+  margin-top: 60px;
+}
+/* line 6, ../../compass/sass/views/_deliveryConfirm.scss */
+#delivery-confirm-wrapper #options-container {
+  border: 1px solid #d8d3c8;
+  padding: 30px;
+  margin-top: 40px;
+}
+/* line 10, ../../compass/sass/views/_deliveryConfirm.scss */
+#delivery-confirm-wrapper #options-container .bold {
+  font-weight: bold;
+}
+/* line 13, ../../compass/sass/views/_deliveryConfirm.scss */
+#delivery-confirm-wrapper #options-container #choices-confirm-header {
+  font-size: 28px;
+  margin: 20px;
+}
+/* line 16, ../../compass/sass/views/_deliveryConfirm.scss */
+#delivery-confirm-wrapper #options-container #choices-confirm-header span {
+  font-size: 12px;
+  color: blue;
+}
+/* line 21, ../../compass/sass/views/_deliveryConfirm.scss */
+#delivery-confirm-wrapper #options-container #delivery-info {
+  font-size: 28px;
+  margin: 20px;
+}
+/* line 24, ../../compass/sass/views/_deliveryConfirm.scss */
+#delivery-confirm-wrapper #options-container #delivery-info span {
+  font-size: 12px;
+  color: blue;
 }

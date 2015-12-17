@@ -7,3 +7,20 @@
 	<link rel="stylesheet" href="stylesheets/public/stylesheets/styles.css">
 
 </head>
+<body>
+	<div id="header">
+		<a href="/"><img src="images/dc_roasters_200x124_lt.png"></a>
+<%  
+	if(!username){
+%>
+		<a href="/login"><input id="login-button" class="btn btn-success" type="submit" value="Login"></a>
+		<a href="/register"><input id="register-button" class="btn btn-primary" type="submit" value="Register"></a>
+<% 
+	}else{
+%>
+		<div id="login-text">Welcome, <a href="#"><%=username%></a>... Not You?</div>
+		<a href="/logout"><input id="register-button" class="btn btn-danger" type="submit" value="Logout"></a>
+<%
+	}
+%>
+	</div>

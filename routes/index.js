@@ -4,7 +4,6 @@ var Account = require('../models/accounts');
 var router = express.Router();
 /* GET home page. */
 router.get('/', function (req, res, next) {
-	console.log(req.user)
 	res.render('index', { username: req.session.username});
 });
 
@@ -14,27 +13,39 @@ router.get('/logout', function (req, res, next){
 })
 
 router.get('/register', function (req, res, next){
-	res.render('register',{err : false})
+	res.render('register',{err : false, passErr : false, username: "",
+						firstName: "", lastName: "", email: "" })
 })
 
 router.post('/register', function (req, res, next){
-	Account.register(new Account(
-			{firstName: req.body.firstName,
-			lastName: req.body.lastName,
-			email: req.body.email,
-			username: req.body.username}),
-		req.body.password,
-		function (err, account){
-			if(err){
-				console.log(err)
-				return res.render('register', {err: err})
+	
+	if((req.body.password === req.body.passwordConfirm)&&(req.body.password.length >= 7)){
+		Account.register(new Account(
+				{firstName: req.body.firstName,
+				lastName: req.body.lastName,
+				email: req.body.email,
+				username: req.body.username}),
+				req.body.password,
+			function (err, account){
+				if(err){
+					return res.render('register', {err: "That username is already in use", passErr: false, username: "",
+						firstName: req.body.firstName, lastName: req.body.lastName, email: req.body.email })
+				}
+					passport.authenticate('local') (req, res, function (){
+						req.session.username = req.body.username;
+						res.redirect('/choices')
+				})
 			}
-				passport.authenticate('local') (req, res, function (){
-					req.session.username = req.body.username;
-					res.redirect('/choices')
-			})
-		}
-	)
+		)
+	}else if(req.body.password !== req.body.passwordConfirm){
+		var message = 'Your Passwords did not match';
+		res.render('register', {err: false, passErr: message, username: req.body.username,
+						firstName: req.body.firstName, lastName: req.body.lastName, email: req.body.email });
+	}else if(req.body.password.length < 7){
+		var message = 'Your password must be at least 7 characters long';
+		res.render('register', {err: false, passErr: message, username: req.body.username,
+						firstName: req.body.firstName, lastName: req.body.lastName, email: req.body.email });
+	}
 })
 
 router.get('/login', function (req, res, next){
@@ -46,28 +57,26 @@ router.get('/login', function (req, res, next){
 		res.render('login', {error: true})
 	}
 
-	res.render('login', {error:false})
+	res.render('login', {error:false, username: false})
 })
 
 router.post('/login', function (req, res, next) {
      passport.authenticate('local', function (err, user, info) {
-		console.log(err)
+
         if (err) {
           return next(err); // will generate a 500 error
         }
         // Generate a JSON response reflecting authentication status
         if (!user) {
-          return res.redirect('/login?failedLogin=1');
+          return res.render('login',{error:true, username:false});
         }
         if (user){
             // Passport session setup.
             passport.serializeUser(function (user, done) {
-              console.log("serializing " + user.username);
               done(null, user);
             });
 
             passport.deserializeUser(function (obj, done) {
-              console.log("deserializing " + obj);
               done(null, obj);
             });        
             req.session.username = user.username;
@@ -86,7 +95,7 @@ router.get('/choices', function (req, res, next){
 			var currGrind = doc.grind ? doc.grind : undefined;
 			var currFrequency = doc.frequency ? doc.frequency : undefined;
 			var currUnitQuantity = doc.unitQuantity ? doc.unitQuantity : undefined;
-			res.render('choices', {username: req.session.username, currGrind: currGrind, currFrequency: currFrequency, unitQuantity: currUnitQuantity});
+			res.render('choices', {username: req.session.username, grind: currGrind, frequency: currFrequency, quantity: currUnitQuantity});
 		})
 		// render the choices view
 		
@@ -113,7 +122,7 @@ router.post('/choices', function (req, res, next){
 				if(err){
 					res.send("There was an error saving your preferences. Please re-enter or send this error to our help team: "+ err);
 				}else{
-					account.save();
+					account.save;
 				}
 		})
 		res.redirect('/delivery')
@@ -127,6 +136,43 @@ router.get('/delivery', function (req, res, next){
 		res.render('delivery',{username: req.session.username})
 	}else{
 		res.redirect('/');
+	}
+})
+
+router.post('/delivery',function (req, res, next){
+	if(req.session.username){
+		var address1 = req.body.address1;
+		var address2 = req.body.address2;
+		var fullName = req.body.fullName;
+		var city = req.body.city;
+		var state = req.body.state;
+		var zip = req.body.zip;
+		var date = req.body.vote;
+
+		Account.findOneAndUpdate(
+			{ username: req.session.username },
+			{ address1: address1,
+			  address2: address2,
+			  fullName: fullName,
+			  city: city,
+			  state: state,
+			  zip: zip,
+			  date: date
+			},
+			{ upsert: true},
+			function (err, account){
+
+				if(err){
+					return res.send("there was an error saving your preferences. Please re-enter or send this error to our help team: "+err)
+				}else{
+					account.save;
+				}
+				res.render('deliveryConfirm',{grind: account.grind, frequency: account.frequency, quantity: account.unitQuantity, username: req.session.username, address1: address1, address2: address2, fullName: fullName, city: city, state: state, zip: zip, date: date})
+			});
+		
+
+	}else{
+		res.redirect('/')
 	}
 })
 

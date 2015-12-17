@@ -1,44 +1,28 @@
 <% include head %>
-<body>
-	<div id="login-header">
-		<a href="/"><img src="images/dc_roasters_200x124_lt.png"></a>
-		<div id="login-text">Login</div>
-		<a id="register-button" href="/register"><input class="btn btn-primary" type="submit" value="Register"></a>
-	</div>
-
 	<div class="container">
-		<h1> Login page</h1>
-		<p class = "lead"> Please enter your username and password below. </p>
-		<br/>
-<%
-	if(error){
-%>
-		<p class="login-error"> The username/password you entered do not match anything in our database</p>
-<%
-	}
-%>
+		<div id='login-wrapper'>
+			<h1> Login page</h1>
+			<p class = "lead"> Please enter your username and password below. </p>
+			<br/>
+	<%
+		if(error){
+	%>
+			<p class="login-error"> The username/password you entered do not match anything in our database</p>
+	<%
+		}
+	%>
 
-		<form id ="login-form" role="form" action="/login" method="post">
-			<div class = "form-group">
-				<input class="form-control text" placeholder="Username" name="username" type="text">
-				<input class="form-control text" placeholder="Password" name="password" type="password">
-				<input class="btn btn-success" type="submit" value="Sign In!">
-				<a href="/"><input class = "btn btn-danger" type="button" value="Cancel"></a> 
-			</div>
-		</form>
-	</div>
-
-	<div id="login-footer">
-		<div>
-			<div id="logo-container">
-				<a href="/"><img src="images/dc_roasters_200x124_lt.png"></a>
-			</div>
+			<form id ="login-form" role="form" action="/login" method="post">
+				<div class = "form-group">
+					<input class="form-control text" placeholder="Username" name="username" type="text">
+					<input class="form-control text" placeholder="Password" name="password" type="password">
+					<input class="btn btn-success" type="submit" value="Sign In!">
+					<a href="/"><input class = "btn btn-danger" type="button" value="Cancel"></a> 
+				</div>
+			</form>
 		</div>
-		<a href="#">Blog</a>
-		<a href="#">Contact</a>
-		<a href="#">Suppliers</a>
 	</div>
-</body>
-</hmtl
+
+<% include foot %>
 
 

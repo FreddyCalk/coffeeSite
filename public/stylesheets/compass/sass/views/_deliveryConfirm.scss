@@ -1,0 +1,30 @@
+#delivery-confirm-wrapper{
+	margin-top:100px;
+	h1{
+		margin-top:60px;
+	}
+	#options-container{
+		border: 1px solid darken($cream,10%);
+		padding:30px;
+		margin-top: 40px;
+		.bold{
+			font-weight:bold;
+		}
+		#choices-confirm-header{
+			font-size: 28px;
+			margin:20px;
+			span{
+				font-size: 12px;
+				color:blue;
+			}
+		}
+		#delivery-info{
+			font-size: 28px;
+			margin:20px;
+			span{
+				font-size: 12px;
+				color:blue;
+			}
+		}
+	}
+}

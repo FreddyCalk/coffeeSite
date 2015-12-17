@@ -11,7 +11,14 @@ var Account = new Schema({
 	password: String,
 	grind: String,
 	unitQuantity: Number,
-	frequency: String
+	frequency: String,
+	address1: String,
+	address2: String,
+	fullName: String,
+	city: String,
+	state: String,
+	zip: Number,
+	date: String
 })
 
 Account.plugin(passportLocalMongoose);

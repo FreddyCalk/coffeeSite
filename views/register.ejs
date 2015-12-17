@@ -1,31 +1,31 @@
 <% include head %>
-<body>
-	<div id="register-header">
-		<a href="/"><img src="images/dc_roasters_200x124_lt.png"></a>
-		<a id="login-button" href="/login"><input class="btn btn-success" type="submit" value="Login"></a>
-		<div id="register-button">Register</div>
-	</div>
+
 	<div class="container">
 		<form id="register-form" role="form" action = "/register" method = "post">
 			<h1> Register Now!</h1>
 			<p class="lead">Fill out the fields below to register.</p>
+			<input class="form-control" type="text" name="firstName" placeholder = "First Name" value="<%=firstName%>">
+			<br/>
+			<input class="form-control" type= "text" name="lastName" placeholder = "Last Name" value="<%=lastName%>">
+			<br/>
+			<input class="form-control" type= "text" name="email" placeholder = "Email Address" value="<%=email%>">
+			<br/>
 <%
 	if(err){
 %>
-			<p class="error-message">That Username is already taken</p>
+			<p class="error-message"><%=err%></p>
 <%
 	}
 %>
-
-
-			<input class="form-control" type="text" name="firstName" placeholder = "First Name">
+			<input class="form-control" type="text" name = "username" placeholder = 'User Name' value="<%=username%>">
 			<br/>
-			<input class="form-control" type= "text" name="lastName" placeholder = "Last Name">
-			<br/>
-			<input class="form-control" type= "text" name="email" placeholder = "Email Address">
-			<br/>
-			<input class="form-control" type="text" name = "username" placeholder = 'User Name'>
-			<br/>
+<%
+	if(passErr){
+%>
+			<p class="error-message"><%=passErr%></p>
+<%
+	}
+%>			
 			<input class = "form-control" type="password" name="password" placeholder = "Password">
 			<br/>
 			<input class = "form-control" type="password" name="passwordConfirm" placeholder = "Confirm password">
@@ -34,18 +34,5 @@
 			<a href="/"><input class = "btn btn-danger" type="button" value="Cancel"></a>
 		</form>
 	</div>
-	<div id="login-footer">
-		<div>
-			<div id="logo-container">
-				<a href="/"><img src="images/dc_roasters_200x124_lt.png"></a>
-			</div>
-		</div>
-		<a href="#">Blog</a>
-		<a href="#">Contact</a>
-		<a href="#">Suppliers</a>
-	</div>
- 
-</body>
-</html>
-
-
+	
+<% include foot %>

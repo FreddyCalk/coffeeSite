@@ -1,61 +1,19 @@
 body{
 	background-color: $cream;
-	#login-header{
-		position:fixed;
-		z-index: 100;
-		margin-top: -250px;
-		height:100px;
-		width:100vw;
-		background-color: $brown_dk;
-		img{
-			height:80%;
-			margin:0.5% 0px 0px 50px;
-		}
-		#login-text{
-			color:$cream;
-			position:absolute;
-			font-size: 15px;
-			top:35px;
-			right:160px;
-		}
-		#register-button{
-			position:absolute;
-			top: 28px;
-			right:50px;
-			font-size: 18px;
-		}
-	}
 	.container{
 		margin: 250px auto;
-		.login-error{
+		#login-wrapper{
+			margin:60px;
+			.login-error{
 			color: $red;
+			}
+			.text{
+				margin: 15px 0px;
+				width:450px;
+				height:45px;
+				font-size: 18px;
+			}
 		}
-		.text{
-			margin: 15px 0px;
-			width:450px;
-			height:45px;
-			font-size: 18px;
-		}
-	}
-	#login-footer{
-		height:400px;
-		width:100vw;
-		background-color: $brown_dk;
-		text-align: center;
-		#logo-container{
-			width:200px;
-			margin:auto;
-		}
-		img{
-			margin: 100px auto 30px;
-		}
-		a{
-			margin: 0px 10px;
-			color:$cream;
-		}
-		a:hover{
-			text-decoration: none;
-			color:$brown_lt;
-		}
+		
 	}
 }

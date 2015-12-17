@@ -2,3 +2,24 @@
 // _FOOTER.SCSS
 // Global Footer styles
 // -------------------------------
+#footer{
+		height:400px;
+		width:100vw;
+		background-color: $brown_dk;
+		text-align: center;
+		#logo-container{
+			width:200px;
+			margin:auto;
+		}
+		img{
+			margin: 100px auto 30px;
+		}
+		a{
+			margin: 0px 10px;
+			color:$cream;
+		}
+		a:hover{
+			text-decoration: none;
+			color:$brown_lt;
+		}
+	}
