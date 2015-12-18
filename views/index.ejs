@@ -17,14 +17,14 @@
 			<form  role="form" action="/login" method="post">
 				<input type="text" class="form-control" name="username" placeholder="Username">
 				<input type="password" class="form-control" name="password" placeholder="Password">
-				<input class="login-button2" type="submit" class="btn" value="Login">		
-				<div id="or">Or</div>
-				<a href="/register"><input class="login-button2" type="button" class="btn" value="Get Started"></a>
+				<input class="login-button12" type="submit" class="btn" value="Login">		
+				<div id="or">OR</div>
+				<a href="/register"><input class="login-button22" type="button" class="btn" value="Get Started"></a>
 <%
 	}else{
 %>
 				<br/><br/><br/><br/>
-				<a href="/choices"><input class="login-button2" type="button" class="btn" value="Set Preferences"></a>
+				<a href="/choices"><input class="login-button12" type="button" class="btn" value="Set Preferences"></a>
 <%
 	}
 %>	
@@ -65,10 +65,31 @@
 			<div class="div-3-body">lorem ipsum is simply</div>
 		</div>
 	</div>
+	<div id="home-div-4">
+		<div id="div-4-image"><img src="images/grower.jpg"></div>
+		<div id="div-4-text-container">
+			<div id="div-4-header">2. We pickup the coffee</div>
+			<div class="div-4-body">lorem ipsum is simply</div>
+			<div class="div-4-body">lorem ipsum is simply</div>
+			<div class="div-4-body">lorem ipsum is simply</div>
+		</div>
+	</div>
+	<div id="home-div-5">
+		<div id="div-5-image"><img src="images/cupSteam.jpg"></div>
+		<div id="div-5-text-container">
+			<div id="div-5-header">3. You drink the coffee</div>
+			<div class="div-5-body">lorem ipsum is simply</div>
+			<div class="div-5-body">lorem ipsum is simply</div>
+			<div class="div-5-body">lorem ipsum is simply</div>
+		</div>
+	</div>
+
 <%
 	if(!username){
 %>
+	<div id="register-button-container">
 		<a href="/register"><input type="submit" class="btn btn-primary" value="Get Started"></a>
+	</div>
 <%
 	}
 %>

@@ -47,17 +47,26 @@ body{
 			}
 			#or{
 				color:$green_dk;
-				font-size: 18px;
+				font-size: 28px;
+				margin:-7px;
 			}
-			.login-button2{
+			.login-button12{
 				width:200px;
-				margin:10px;
+				margin-top:10px;
 				background-color: $green_lt;
 				color:$cream;
 				font-size: 20px;
 				border-radius:10px;
 			}
-			.login-button2:hover{
+			.login-button22{
+				width:200px;
+				margin-bottom:10px;
+				background-color: $green_lt;
+				color:$cream;
+				font-size: 20px;
+				border-radius:10px;
+			}
+			.login-button12:hover, .login-button22:hover{
 				background-color: $green_md;
 			}
 		}
@@ -76,7 +85,7 @@ body{
 	}
 	#home-div-3{
 		width:100vw;
-		height:800px;
+		height:670px;
 		#div-3-banner{
 			height:70px;
 			background-color: $cream;
@@ -88,7 +97,7 @@ body{
 			}
 		}
 		#div-3-container{
-			background-image: url('../../../images/CoffeeBags.jpg');
+			background: url('../../../images/CoffeeBags.jpg') no-repeat scroll left;
 			height:600px;
 			color:$cream;
 			#div-3-header{
@@ -100,6 +109,80 @@ body{
 				padding: 10px 0px 0px 270px;
 				font-size: 24px;
 			}
+		}
+	}
+	#home-div-4{
+		height:600px;
+		width:100vw;
+		#div-4-image{
+			margin: 80px 30px 60px 100px;
+			padding:20px;
+			background-color:white;
+			transform: rotate(-6.5deg);
+			box-shadow: 5px 5px 10px #999;
+			float:left;
+			display:inline;
+			img{
+				border: 2px solid darken($cream, 10%);
+			}
+		}
+		#div-4-text-container{
+			margin:70px 300px 0px 0px;
+			float:right;
+			display:inline;
+			color: $green_dk;
+
+			#div-4-header{
+				padding:150px 0px 0px 0px;
+				font-size: 32px;
+			}
+			.div-4-body{
+				margin:10px;
+				padding:10px;
+				font-size:24px;
+			}
+		}
+	}
+	#home-div-5{
+		height:430px;
+		width:100vw;
+		background-color:$black;
+		#div-5-image{
+
+			float:right;
+			display:inline;
+			img{
+
+			}
+		}
+		#div-5-text-container{
+			margin:70px 300px 0px 150px;
+			float:left;
+			display:inline;
+			color: $cream;
+
+			#div-5-header{
+				padding:30px 0px 0px 0px;
+				font-size: 32px;
+			}
+			.div-5-body{
+				margin:10px;
+				padding:10px;
+				font-size:24px;
+			}
+		}
+	}
+	#register-button-container{
+		text-align:center;
+		margin:80px;
+		.btn{
+			background-color:$green_lt;
+			font-size: 24px;
+			width:250px;
+			height:70px;
+		}
+		.btn:hover{
+			background-color:$green_md;
 		}
 	}
 }

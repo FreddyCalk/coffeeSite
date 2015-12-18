@@ -213,6 +213,15 @@ router.post('/payment', function (req, res, next){
 	})
 })
 
+router.get('/thankyou', function (req, res, next){
+	if(req.session.username){
+		Account.findOne({username: req.session.username}, function (err, info){
+
+		})
+		res.render('thankyou',{username: req.session.username});
+	}
+})
+
 router.get('/email', function (req, res, next){
 	var transporter = nodeMailer.createTransport({
 		service: 'Gmail',

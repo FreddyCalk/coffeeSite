@@ -1,0 +1,30 @@
+#thanks-body{
+	height:300px;
+	#thanks-header{
+		font-size: 48px;
+		margin-top: 40px;
+	}
+	#order-details{
+		#details-header{
+			font-size: 32px;
+		}
+	}
+	#delivery-details{
+		#delivery-header{
+			font-size: 32px;
+		}
+	}
+	#home-container{
+		margin:auto;
+		position:absolute;
+		top:500px;
+	}
+	.btn{
+		color:$cream;
+		background-color: $green_lt;
+		width:250px;
+	}
+	.btn:hover{
+		background-color: $green_md;
+	}
+}
