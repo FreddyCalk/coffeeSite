@@ -18,9 +18,14 @@
 <% 
 	}else{
 %>
-		<div id="login-text">Welcome, <a href="#"><%=username%></a>... Not You?</div>
-		<a href="/logout"><input id="register-button" class="btn btn-danger" type="submit" value="Logout"></a>
+		<div id="login-text">Welcome, <a href="/user"><%=username%></a>... Not You?</div>
+		<a href="/logout"><input id="login-button" class="btn btn-danger" type="submit" value="Logout"></a>
 <%
+		if(accessLevel){
+%>
+		<a href="/admin" id="register-button" class="btn btn-warning">Admin</a>
+<%
+		}
 	}
 %>
 	</div>

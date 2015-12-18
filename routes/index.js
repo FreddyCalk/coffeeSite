@@ -7,7 +7,7 @@ var vars = require('../config/vars.json');
 var stripe = require('stripe')("sk_test_HI3dHwOVFKZBk3MKVeAOBATe");
 /* GET home page. */
 router.get('/', function (req, res, next) {
-	res.render('index', { username: req.session.username});
+	res.render('index', { username: req.session.username,accessLevel: req.session.accessLevel});
 });
 
 router.get('/logout', function (req, res, next){
@@ -60,7 +60,7 @@ router.get('/login', function (req, res, next){
 		res.render('login', {error: true})
 	}
 
-	res.render('login', {error:false, username: false})
+	res.render('login', {error:false, username: false, accessLevel: false})
 })
 
 router.post('/login', function (req, res, next) {
@@ -74,14 +74,18 @@ router.post('/login', function (req, res, next) {
           return res.render('login',{error:true, username:false});
         }
         if (user){
+        	if(user.accessLevel == 5){
+        		// level 5 is admin
+        		req.session.accessLevel = "Admin";
+        	}
             // Passport session setup.
-            passport.serializeUser(function (user, done) {
-              done(null, user);
-            });
+            // passport.serializeUser(function (user, done) {
+            //   done(null, user);
+            // });
 
-            passport.deserializeUser(function (obj, done) {
-              done(null, obj);
-            });        
+            // passport.deserializeUser(function (obj, done) {
+            //   done(null, obj);
+            // });        
             req.session.username = user.username;
         }
 
@@ -98,7 +102,7 @@ router.get('/choices', function (req, res, next){
 			var currGrind = doc.grind ? doc.grind : undefined;
 			var currFrequency = doc.frequency ? doc.frequency : undefined;
 			var currUnitQuantity = doc.unitQuantity ? doc.unitQuantity : undefined;
-			res.render('choices', {username: req.session.username, grind: currGrind, frequency: currFrequency, quantity: currUnitQuantity});
+			res.render('choices', {username: req.session.username, accessLevel: req.session.accessLevel, grind: currGrind, frequency: currFrequency, quantity: currUnitQuantity});
 		})
 		// render the choices view
 		
@@ -145,7 +149,7 @@ router.get('/delivery', function (req, res, next){
 				var currState = doc.state ? doc.state : undefined;
 				var currZip = doc.zip ? doc.zip : undefined;
 				res.render('delivery',{username: req.session.username, fullName : currName,
-			address1:currAddress1,address2:currAddress2,city:currCity,state:currState,zip:currZip})
+			address1:currAddress1,address2:currAddress2,city:currCity,state:currState,zip:currZip, accessLevel: req.session.accessLevel})
 			})
 
 	}else{
@@ -161,7 +165,7 @@ router.post('/delivery',function (req, res, next){
 		var city = req.body.city;
 		var state = req.body.state;
 		var zip = req.body.zip;
-		var date = req.body.vote;
+		var date = req.body.date;
 
 		Account.findOneAndUpdate(
 			{ username: req.session.username },
@@ -181,7 +185,7 @@ router.post('/delivery',function (req, res, next){
 				}else{
 					account.save;
 				}
-				res.render('deliveryConfirm',{grind: account.grind, frequency: account.frequency, quantity: account.unitQuantity, username: req.session.username, address1: address1, address2: address2, fullName: fullName, city: city, state: state, zip: zip, date: date})
+				res.render('deliveryConfirm',{grind: account.grind, frequency: account.frequency, quantity: account.unitQuantity, username: req.session.username, address1: address1, address2: address2, fullName: fullName, city: city, state: state, zip: zip, date: date, accessLevel: req.session.accessLevel})
 			});
 		
 
@@ -193,7 +197,7 @@ router.post('/delivery',function (req, res, next){
 router.get('/payment', function (req, res, next){
 	Account.findOne({username: req.session.username}, function (err, account){
 		console.log(account)
-		res.render('payment',{grind: account.grind, frequency: account.frequency, quantity: account.unitQuantity, username: req.session.username, address1: account.address1, address2: account.address2, fullName: account.fullName, city: account.city, state: account.state, zip: account.zip, date: account.date})
+		res.render('payment',{grind: account.grind, frequency: account.frequency, quantity: account.unitQuantity, username: req.session.username, address1: account.address1, address2: account.address2, fullName: account.fullName, city: account.city, state: account.state, zip: account.zip, date: account.date, accessLevel: req.session.accessLevel})
 	})
 	
 })
@@ -216,9 +220,33 @@ router.post('/payment', function (req, res, next){
 router.get('/thankyou', function (req, res, next){
 	if(req.session.username){
 		Account.findOne({username: req.session.username}, function (err, info){
-
+			var quantity = info.unitQuantity ? info.unitQuantity : undefined;
+			var grind = info.grind ? info.grind  : undefined;
+			var frequency = info.frequency ? info.frequency : undefined;
+			var fullName = info.fullName ? info.fullName : undefined;
+			var address1 = info.address1 ? info.address1 : undefined;
+			var address2 = info.address2 ? info.address2 : undefined;
+			var city = info.city ? info.city : undefined;
+			var state = info.state ? info.state : undefined;
+			var zip = info.zip ? info.zip : undefined;
+			var date = info.date ? info.date : undefined;
+			var infoObject = {
+				quantity: quantity,
+				grind: grind,
+				frequency: frequency,
+				fullName: fullName,
+				address1: address1,
+				address2: address2,
+				city: city,
+				state: state,
+				zip: zip,
+				date: date
+			}
+			console.log(infoObject);
+			res.render('thankyou',{username: req.session.username, info: infoObject, accessLevel: req.session.accessLevel});	
 		})
-		res.render('thankyou',{username: req.session.username});
+	}else{
+		res.redirect('/')
 	}
 })
 
@@ -249,7 +277,30 @@ router.get('/email', function (req, res, next){
 })
 
 router.get('/contact', function (req, res, next){
-	res.render('contact',{grind: account.grind, frequency: account.frequency, quantity: account.unitQuantity, username: req.session.username, address1: address1, address2: address2, fullName: fullName, city: city, state: state, zip: zip, date: date})
+	res.render('contact',{grind: account.grind, frequency: account.frequency, quantity: account.unitQuantity, username: req.session.username, address1: address1, address2: address2, fullName: fullName, city: city, state: state, zip: zip, date: date, accessLevel: req.session.accessLevel})
 })
+
+router.get('/admin', function (req, res, next){
+	if(req.session.accessLevel == 'Admin'){
+		Account.find({},function (err,doc,next){
+			res.render('admin',{username: req.session.username, accessLevel: req.session.accessLevel, accounts: doc});
+		});
+	}else{
+		res.redirect('/');
+	}
+})
+
+router.get('/user', function (req, res, next){
+	if(req.session.username){
+		Account.findOne({username: req.session.username},
+			function (err, info){
+				console.log(info)
+				res.render('user',{username: req.session.username, accessLevel: req.session.accessLevel, data: info})
+			})
+	}else{
+		res.redirect('/')
+	}
+})
+
 
 module.exports = router;

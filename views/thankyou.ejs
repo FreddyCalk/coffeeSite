@@ -5,16 +5,16 @@
 		<div id="delivery-information">
 			<div id="order-details">
 				<div class="col-xs-12" id="details-header">Order Info</div>
-				<div class="col-xs-2" id="quantity">Quantity:</div> <span class="col-xs-9 col-offset-xs-1">5 Packages</span>
-				<div class="col-xs-2" id="grade">Grind: </div><span class="col-xs-9 col-offset-xs-1">Extra Coarse</span>
-				<div class="col-xs-2" id="frequency">Frequency: </div><span class="col-xs-9 col-offset-xs-1">Weekly</span>
+				<div class="col-xs-2" id="quantity">Quantity:</div> <div class="col-xs-9 col-offset-xs-1"><%=info.quantity%> Packages</div>
+				<div class="col-xs-2" id="grade">Grind: </div><div class="col-xs-9 col-offset-xs-1"><%=info.grind%></div>
+				<div class="col-xs-2" id="frequency">Frequency: </div><div class="col-xs-9 col-offset-xs-1"><%=info.frequency%></div>
 			</div>
 			<div id="delivery-details">
 				<div class="col-xs-12" id="delivery-header">Delivery Info</div>
-				<div class="col-xs-2" id="name">Name: </div> <span class="col-xs-9 col-offset-xs-1">Freddy Calk</span>
-				<div class="col-xs-2" id="address">Address:</div><span class="col-xs-9 col-offset-xs-1">1807 Meadowdale Ave NE</span>
-				<div class="col-xs-2" id="city-state-zip"></div> <span class="col-xs-9 col-offset-xs-1">Atlanta, GA 30306</span>
-				<div class="col-xs-2" id="delivery-date">Expected Delivery: </div><span class="col-xs-9 col-offset-xs-1">1/1/2015</span>
+				<div class="col-xs-2" id="name">Name: </div> <div class="col-xs-9 col-offset-xs-1"><%=info.fullName%></div>
+				<div class="col-xs-2" id="address">Address:</div><div class="col-xs-9 col-offset-xs-1"><%=info.address1%><br/><%=info.address2%></div>
+				<div class="col-xs-2" id="city-state-zip"></div> <div class="col-xs-9 col-offset-xs-1"><%=info.city%>, <%=info.state%> <%=info.zip%></div>
+				<div class="col-xs-2" id="delivery-date">Expected Delivery: </div><div class="col-xs-9 col-offset-xs-1"><%=info.date%></div>
 			</div>
 		</div>
 
