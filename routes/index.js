@@ -3,7 +3,7 @@ var passport = require('passport');
 var Account = require('../models/accounts');
 var router = express.Router();
 var nodeMailer = require('nodemailer')
-var vars = require('../config/vars.json');
+// var vars = require('../config/vars.json');
 var stripe = require('stripe')("sk_test_HI3dHwOVFKZBk3MKVeAOBATe");
 /* GET home page. */
 router.get('/', function (req, res, next) {
