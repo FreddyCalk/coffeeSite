@@ -1,8 +1,15 @@
 <% include head %>
 
 <div class="container">
+<h2> Your Profile </h2>
+	<div id="name"> Full Name: <%=data.fullName%></div>
+	<div id="address"> Address: <%=data.address1%> <br/> <%=data.address2%> </div>
+	<div id="city-state-zip"> <%=data.city%>, <%=data.state%> <%=data.zip%></div>
 
-
+<h2> Order Details </h2>
+	<div id="quality">Grind: <%=data.grind%></div>
+	<div id="frequency">Frequency: <%=data.frequency%></div>
+	<div id="quantity">Quantity: <%=data.unitQuantity%></div>
 </div>
 
 <% include foot %>
