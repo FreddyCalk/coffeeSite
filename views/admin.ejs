@@ -1,5 +1,54 @@
 <% include head %>
 
-<div class="container"></div>
+<div class="container">
+	<div id="page-wrapper">
+<%
+	for(i=0;i<accounts.length;i++){
+%>
+		<h2 class="users-name"><%=accounts[i].fullName%> (<%=accounts[i].username%>)</h2>
+		<div class="admin-username"></div>
+		<h4 class="preferences">Account Preferences</h4>
+			<div class="row">
+				<div class="col-xs-1 bold">Grind</div>
+				<div class="col-xs-2 col-xs-offset-1"><%=accounts[i].grind%></div>
+			</div>
+			<div class="row">
+				<div class="col-xs-2 bold">Frequency</div>
+				<div class="col-xs-2"><%=accounts[i].frequency%></div>
+			</div>
+			<div class="row">
+				<div class="col-xs-2 bold">Quantity</div>
+				<div class="col-xs-2"><%=accounts[i].unitQuantity%> Packages</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-2 bold">Next Delivery</div>
+				<div class="col-xs-2"><%=accounts[i].date%></div>
+			</div>
+		<h4 class="preferences">General Account Info</h4>
+			<div class="row">
+				<div class="col-xs-1 bold">Address</div>
+				<div class="col-xs-3 col-xs-offset-1"><%=accounts[i].address1%></div>
+			</div>
+			<div class="row">
+				<div class="col-xs-2 bold">Frequency</div>
+				<div class="col-xs-2"><%=accounts[i].frequency%></div>
+			</div>
+			<div class="row">
+				<div class="col-xs-2 bold">Quantity</div>
+				<div class="col-xs-2"><%=accounts[i].unitQuantity%> Packages</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-2 bold">Admin Level:</div>
+				<div class="col-xs-2"><%=accounts[i].accessLevel%></div>
+			</div>
+
+<%
+		}
+%>
+
+
+
+	</div>
+</div>
 
 <% include foot %>
